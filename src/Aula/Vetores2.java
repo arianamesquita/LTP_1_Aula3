@@ -25,7 +25,7 @@ public class Vetores2 {
         // Depois o sistema deve calular a média e a quantidade de pessoas em cada faixa de valor.
         // usar vetor auxiliar pra contar frequência
 
-        int[] coxinha = new int[30];
+        int[] coxinha = new int[5];
         int[] fr = new int[coxinha.length];
         int visto = -1;
         int i;
@@ -35,6 +35,7 @@ public class Vetores2 {
 
         System.out.println("Entre o valor da nota entre 1 a 10: ");
         for (i = 0; i < coxinha.length; i++) {
+            coxinha[i] = ler.nextInt();
 /*            if (ler.hasNext("[0-10]")){
                 coxinha[i] = ler.nextInt();
                 media += coxinha[i];
@@ -42,13 +43,15 @@ public class Vetores2 {
                 System.out.println("Entre um valor válido!");
                 media--;
             }*/
-            if (coxinha[i] > 10 || coxinha[i] < 0) {
+            while (coxinha[i] > 10 || coxinha[i] < 0) {
                 System.out.println("Entre um valor válido!");
-                media--;
+                coxinha[i] = ler.nextInt();
+//                media -= coxinha[i];
             }
-            if (coxinha[i] <= 10 || coxinha[i] >= 0){
+            media += coxinha[i];
+/*            if (coxinha[i] <= 10 || coxinha[i] >= 0){
                 media += coxinha[i];
-            }
+            }*/
         }
         System.out.println("\n A soma total dos votos foi de: " + media);
         media /= coxinha.length;
