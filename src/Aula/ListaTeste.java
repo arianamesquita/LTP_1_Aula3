@@ -2,7 +2,6 @@ package Aula;
 
 import java.util.Arrays;
 import java.util.Random;
-import java.util.Scanner;
 
 public class ListaTeste {
     public static void main(String[] args) {
@@ -14,13 +13,19 @@ public class ListaTeste {
             b[i] = 1;
         }
         System.out.println(Arrays.toString(b));*/
-        int [] a = {1,1,1,1,1,1,1,1,1,1,1};
+/*        int [] a = {1,1,1,1,1,1,1,1,1,1,1};
         int [] b = new int[34];
+        Random rd = new Random();
         int i;
         for (i = 0; i < a.length; i++){
             b[i] = a[i];
             System.out.println(Arrays.toString(b));
         }
+        System.out.println("Os números selecionados para esta rodada foram: ");
+        for (i = 11; i < b.length; i++){
+            b[i] = rd.nextInt(2,10);
+        }
+        System.out.println(Arrays.toString(b));*/
 /*        float[] c = {8.2f, 5.3f, 2.5f, 9.9f, 5.6f, 7.7f, 7.3f, 6.9f, 4.1f};
 //        Arrays.sort(c);
 //        System.out.println("O menor valor: " + c[0]);
@@ -136,7 +141,7 @@ public class ListaTeste {
             }
         }*/
 /*        int[] e = new int[10];
-        int maior = e[0], menor = e[0];
+        int maior = e[1], menor = e[0];
         int i;
         Random rd = new Random();
         System.out.println("Os números selecionados para esta rodada foram: ");
@@ -144,7 +149,7 @@ public class ListaTeste {
             e[i] = rd.nextInt(0,20);
             System.out.println(e[i]);
         }
-        for (i = 1; i < e.length; i++){
+        for (i = 0; i < e.length; i++){
             if (e[i] > maior){
                 maior = e[i];
             }
@@ -193,12 +198,16 @@ public class ListaTeste {
                 }
             }
         }*/
-/*        int[] c = {8, 5, 2, 9, 2, 3, 7, 6, 0, 0};
-        int menor1 = Integer.MAX_VALUE;
-        int menor2 = Integer.MAX_VALUE;
-        int i = 0;
-
+/*        int[] c = new int[10];
+        Random rd = new Random();
+        int i;
         for (i = 0; i < c.length; i++){
+            c[i] = rd.nextInt(0,10);
+        }
+        System.out.println(Arrays.toString(c)); //aqui imprime em linha o array selecionado no random acima.
+        int menor1 = [0];
+        int menor2 = [1];
+        for (i = 0; i < 10; i++){
             if (c[i] < menor1){
                 menor2 = menor1;
                 menor1 = c[i];
@@ -208,9 +217,25 @@ public class ListaTeste {
         }
         System.out.println("O menor número é: " + menor1);
         System.out.println("O segundo menor número é: " + menor2);*/
-/*        int[] z = {7, 0, 5, 10, 3, 1};
+/*        int[] z = {42, 55, 95, 79, 85};
+        int i, countC = 0, countD = 0;
+        for (i = 0; i < 4; i++){
+            if (z[i] > z[i+1]){
+                countC++;
+            } else if (z[i] < z[i+1]){
+                countD++;
+            }
+        }
+        if (countC == 4){
+            System.out.println("O vetor está ordenado de forma decrescente!");
+        } else if (countD == 4){
+            System.out.println("O vetor está ordenado de forma crescente!");
+        } else {
+            System.out.println("O vetor está desordenado!");
+        }*/
+        int[] z = {86, 75, 63, 54, 42, 38, 29, 11, 8};
 
-        if (z[0] < z[1] && z[1] < z[2] && z[2] < z[3] && z[3] < z[4] && z[4] < z[5]){
+/*        if (z[0] < z[1] && z[1] < z[2] && z[2] < z[3] && z[3] < z[4] && z[4] < z[5]){
             System.out.println("O vetor está ordenado de forma crescente!");
         }
         else if (z[0] > z[1] && z[1] > z[2] && z[2] > z[3] && z[3] > z[4] && z[4] > z[5]){
@@ -219,6 +244,40 @@ public class ListaTeste {
         else {
             System.out.println("O vetor está desordenado!");
         }*/
+        //ou também
+/*        int j = 1, count = 0, count2 = 0;
+        for (int i = 0; i <= z.length; i++){
+            if (z[i] < z[i+j]){
+                count++;
+            }
+            if (z[i] > z[i+j]){
+                count2++;
+            }
+        }
+        if (count < z.length){
+            System.out.println("O vetor está desordenado!");
+        }
+        else if (count == z.length){
+            System.out.println("O vetor está ordenado de forma crescente!");
+        }
+        else if (count2 < z.length){
+            System.out.println("O vetor está desordenado!");
+        } else if (count2 == z.length) {
+            System.out.println("O vetor está ordenado de forma decrescente!");
+        }*/
+
+/*        if (z[i] < z[i+j]){
+            System.out.println("O vetor está ordenado de forma crescente!");
+        }
+        else if (z[i] > z[i+j]){
+            System.out.println("O vetor está ordenado de forma decrescente!");
+        }
+        else{
+            System.out.println("O vetor está desordenado!");
+        }*/
+
+
+
 /*        float[] c = new float[100];
         Random rd = new Random();
         int i;
@@ -231,5 +290,72 @@ public class ListaTeste {
             soma += c[i];
         }
         System.out.println(soma);*/
+        //como ordenar vetor de números inteiros
+        int[] c = new int[10];
+        Random rd = new Random();
+        System.out.println("Os números selecionados para esta rodada foram: ");
+        for (int i = 0; i < 10; i++){
+            c[i] = rd.nextInt(0,20);
+        }
+        System.out.println(Arrays.toString(c));
+
+        Arrays.sort(c);
+        System.out.println(Arrays.toString(c));
+
+        //Bubble sort, quick sort, merge sort
+        int i, j, aux;
+        for (i = 0; i < 10; i++){
+            for (j = 1; j < (10 - i); j++){
+                if (c[j-1] > c[j]){
+                    aux = c[j-1];
+                    c[j-1] = c[j];
+                    c[j] = aux;
+                }
+            }
+        }
+        System.out.println(Arrays.toString(c));
+
+/*        int[] x = new int[10];
+        Random rd = new Random();
+        int i;
+        for (i = 0; i < x.length; i++){
+            x[i] = rd.nextInt(0,10);
+        }
+        System.out.println(Arrays.toString(x)); //aqui imprime em linha o array selecionado no random acima.
+        int menor1 = x[1];
+        int menor2 = x[0];
+        for (i = 2; i < 10; i++){
+            if (x[i] < menor2) {
+                if (x[i] < menor1) {
+                    menor2 = menor1;
+                    menor1 = x[i];
+                } else if (x[i] < menor2 && x[i] > menor1) {
+                    menor2 = x[i];
+                }
+            }
+        }
+        System.out.println("O menor número é: " + menor1 + " e o segundo menor é: " + menor2);*/
+
+/*        int[] c = new int[10];
+        Random rd = new Random();
+        int i;
+        for (i = 0; i < c.length; i++){
+            c[i] = rd.nextInt(0,10);
+        }
+        System.out.println(Arrays.toString(c));
+        int menor1 = Integer.MAX_VALUE;
+        int menor2 = Integer.MAX_VALUE;
+
+        for (i = 0; i < c.length; i++){
+            if (c[i] < menor1){
+                menor2 = menor1;
+                menor1 = c[i];
+            } else if (c[i] < menor2 && c[i] > menor1) {
+                menor2 = c[i];
+            }
+        }
+        System.out.println("O menor número é: " + menor1);
+        System.out.println("O segundo menor número é: " + menor2);*/
+
     }
 }

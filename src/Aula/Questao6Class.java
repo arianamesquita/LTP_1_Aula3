@@ -3,9 +3,10 @@ package Aula;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class Questao6Class {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Scanner ler = new Scanner(System.in);
         // armazenar 10 número aleatório no vetor - opção Random ou Math
         // enquanto atribui diga que número é esse
@@ -20,52 +21,54 @@ public class Questao6Class {
             e[i] = rd.nextInt(-20,20);
         }
         System.out.println(Arrays.toString(e));
+        while (true){
+            System.out.println("\n1 - Quantidade de números pares.");//quantidade pares e ímpares
+            System.out.println("2 - Quantidade de números ímpares.");
+            System.out.println("3 - Quantidade de números primos.");//Quantidade números primos
+            System.out.println("4 - Quantidade de números positivos.");//Quantidade números positivos e negativos
+            System.out.println("5 - Quantidade de números negativos.");
+            System.out.println("6 - Múltiplos de número a ser escolhido pelo usuário.");//Múltiplos de nº escolhido pelo usuário
+            System.out.println("7 - O maior e o menor valor presentes no vetor.");//Maior e menor valor presente no vetor
+            System.out.println("8 - A quantidade de números duplicados no vetor, quais e quantos eles são.");//Duplicados - quantos e quais são
+            System.out.println("9 - Para sair do programa.");//Sair do programa
 
-        System.out.println("\n1 - Quantidade de números pares.");//quantidade pares e ímpares
-        System.out.println("2 - Quantidade de números ímpares.");
-        System.out.println("3 - Quantidade de números primos.");//Quantidade números primos
-        System.out.println("4 - Quantidade de números positivos.");//Quantidade números positivos e negativos
-        System.out.println("5 - Quantidade de números negativos.");
-        System.out.println("6 - Múltiplos de número a ser escolhido pelo usuário.");//Múltiplos de nº escolhido pelo usuário
-        System.out.println("7 - O maior e o menor valor presentes no vetor.");//Maior e menor valor presente no vetor
-        System.out.println("8 - O maior e o menor valor presentes no vetor.");//Duplicados - quantos e quais são
-        System.out.println("9 - Para sair do programa.");//Sair do programa
+            System.out.println("\nDigite a opção desejada: ");
+            int resposta = ler.nextInt();
 
-        System.out.println("\nDigite a opção desejada: ");
-        int resposta = ler.nextInt();
-
-        switch (resposta) {
-            case 1: //qttd pares e impares
-                int a = qtddPares(e);
-                System.out.println("A quantidade de números pares é: " + a);
-                break;
-            case 2: //qttd pares e impares
-                int b = qtddImpares(e);
-                System.out.println("A quantidade de números ímpares é: " + b);
-                break;
-            case 3: //verifica primo
-                int c = qtddPrimo(e);
-                System.out.println("A quantidade de números primos é: " + c);
-                break;
-            case 4: //verifica positivo
-                int d = qtddPositivos(e);
-                System.out.println("A quantidade de números positivos é: " + d);
-                break;
-            case 5: //verifica negativo
-                int f = qtddNegativos(e);
-                System.out.println("A quantidade de números primos é: " + f);
-                break;
-            case 6: //qtdd múltiplos de um número escolhido pelo usuário
-                int[] g = qtddMultiplos(e);
-                break;
-            case 7: //maior e menor número
-                int[] h = maiorEmenor(e);
-                break;
-            case 8: //duplicados
-                int[] m = duplicados(e);
-                break;
-            case 9:
-                break;
+            switch (resposta) {
+                case 1: //qttd pares e impares
+                    int a = qtddPares(e);
+                    System.out.println("A quantidade de números pares é: " + a);
+                    break;
+                case 2: //qttd pares e impares
+                    int b = qtddImpares(e);
+                    System.out.println("A quantidade de números ímpares é: " + b);
+                    break;
+                case 3: //verifica primo
+                    int c = qtddPrimo(e);
+                    System.out.println("A quantidade de números primos é: " + c);
+                    break;
+                case 4: //verifica positivo
+                    int d = qtddPositivos(e);
+                    System.out.println("A quantidade de números positivos é: " + d);
+                    break;
+                case 5: //verifica negativo
+                    int f = qtddNegativos(e);
+                    System.out.println("A quantidade de números primos é: " + f);
+                    break;
+                case 6: //qtdd múltiplos de um número escolhido pelo usuário
+                    qtddMultiplos(e);
+                    break;
+                case 7: //maior e menor número
+                    maiorEmenor(e);
+                    break;
+                case 8: //duplicados
+                    duplicados(e);
+                    break;
+                case 9:
+                    System.exit(0);
+            }
+            TimeUnit.SECONDS.sleep(5); //esperar um segundo para a próxima impressão.
         }
     }
 
@@ -93,7 +96,7 @@ public class Questao6Class {
         int count3 = 0;
         int i;
         for (i = 0; i < x.length; i++){
-            if (!(x[i] % 2 == 0) && (!(x[i] % 3 == 0)) || x[i] == 2 || x[i] == -2 || x[i] == 3 || x[i] == -3 ){
+            if (!(x[i] % 2 == 0) && (!(x[i] % 3 == 0)) || x[i] == 2 || x[i] == -2 || x[i] == -3 || x[i] == 3){
                 count3++;
             }
         }
